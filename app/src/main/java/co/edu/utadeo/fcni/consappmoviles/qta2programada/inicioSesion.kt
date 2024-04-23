@@ -32,12 +32,14 @@ class inicioSesion : AppCompatActivity() {
         val usuarioEditText = findViewById<EditText>(R.id.Usuario)
         val contrasenaEditText = findViewById<EditText>(R.id.Contraseña)
         fun lanzarDosMitades() {
-            val intent = Intent(this, inicioSesion::class.java)
+            val intent = Intent(this, dosmitades::class.java)
             startActivity(intent)
         }
         binding.imageButton.setOnClickListener {
             if(usuarioEditText.text.toString() == "alejing@gmail.com" && contrasenaEditText.text.toString() == "profe123"){
                 lanzarDosMitades()
+            }else{
+                Toast.makeText(this, "Por favor, revise los datos y vuelva a intentarlo", Toast.LENGTH_SHORT).show()
             }
         }
     }
